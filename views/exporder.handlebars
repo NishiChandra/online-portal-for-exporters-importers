@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+<title>Exporter-HomePage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+ .main{
+ border:1px solid;
+ padding:20px;
+ }
+  .blah{
+ border:1px solid;}
+  </style>
+</head>
+<body>
+<header>
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+	
+	<div class="navbar-header">
+		<img src ="/images/logo.png" style="width:90px;height:50px;">
+	</div>
+<div >
+	<ul class="nav navbar-nav">
+	<li class="active"><a href="/exporter/exphome">Home</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+	<li><a href="/exporter/exporder"><span class="glyphicon glyphicon-shopping-cart"></span>My Orders</a></li>
+	<li><a href="/index"><span class="glyphicon glyphicon-user"></span>LogOut</a></li>
+	</ul>
+</div>
+	
+</nav>
+</header>
+<!--Dividing the page into two using bootstrap property -->
+<div class="container">
+  <h1>Orders</h1></br></br>
+   {{# each user}}
+  <p name="exp">Exporter Id :{{{this.exporterId}}}</p>
+  {{/each}}
+  <div class="row">
+  <!--In this div buttons according to order status are displayed-->
+    <div class="col-md-3 btn-group-vertical">
+		<!--Viewing pending orders by clicking on the button ,info will be populated by using the table orders -->
+		<button type="button" class="btn btn-warning btn-md">Pending</button></br></br>
+		<!--Viewing new orders ,by clicking on the button ,info will be populated by using the table orders -->
+		<button type="button" class="btn btn-primary btn-md">Done</button></br></br>
+		<!--Viewing previous orders by clicking on the button, info will be populated by using the table orders -->
+    </div>
+<!--In this div corresponding info according to the order status will be viewed -->
+    <div class="col-lg-9">
+	<table style="width:100%">
+  <tr>
+    <th>Order Id</th> 
+    <th>Importer emailId</th>
+    <th>Importer Address</th>
+    <th>Mode of Payment</th>
+    <th>Status</th>
+
+  </tr>
+  {{# each orders}}
+  <tr>
+    <td>{{this.orderid}}</td>
+    <td>{{this.email}}</td> 
+    <td>{{this.address}}</td>
+    <td>{{this.modeofpayment}}</td> 
+    <td>{{this.status}}</td> 
+  </tr>
+  {{/each}}
+</table>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

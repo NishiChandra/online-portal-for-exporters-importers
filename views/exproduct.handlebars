@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+<title>Exporter-HomePage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header>
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+	
+	<div class="navbar-header">
+		<img src ="/images/logo.png" style="width:90px;height:50px;">
+	</div>
+<div >
+	<ul class="nav navbar-nav">
+	<li class="active"><a href="/exporter/exphome">Home</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+	<li><a href="/exporter/exporder"><span class="glyphicon glyphicon-shopping-cart"></span>My Orders</a></li>
+	<li><a href="/index"><span class="glyphicon glyphicon-user"></span>LogOut</a></li>
+	</ul>
+</div>
+	
+</nav>
+</header>
+<div class="container">
+		<center>
+		<div class="form-box">
+			<h2>Add Product</h2>
+			</br> 
+				<form align="center" action="/product" method="post" enctype="multipart/form-data">
+				<!--field1: ProductName id="productName" -->
+					<div class="form-group">
+						<label for="Product_name">Product-Name:
+						<input type="text" class="form-control" name="pName" required>
+						</label>
+					</div>
+					<!--field2: ProductImage id="productImage" 
+					<div class="form-group">
+					<label for="pImage">Place Product Image
+					<input type="file" class="form-control-file" name="pImage" accept="image/*" aria-describedby="fileHelp">
+					</label>
+					</div>
+					-->
+					
+					<!--field3: Price id="price" -->
+					<div class="form-group">
+					  <label for="pwd">Price
+					  <input type="text" class="form-control" name="price" required>
+					  </label>
+					</div>
+					<!--field4: Quantity id="quantity" -->
+					<div class="form-group">
+					  <label for="pwd">Quantity
+					  <input type="text" class="form-control" name="quantity" required>
+					  </label>
+					</div>
+					<!--field5: Category id="category"  here (id=value of item) -->
+					<div class="form-group">
+					  <label for="category">Category
+					  <select name="Category" class="selectpicker form-control" >
+							<option value="Art_Works">Art Works</option>
+							<option value="Bags">Bags and Luggage bags</option>
+							<option value="Beauty Supplies">Beauty Supplies</option>
+							<option value="Computers">Computers</option>
+							<option value="Electronic Gadgets">Electronic Gadgets</option>
+							<option value="Handmade Articles">Handmade Articles</option>
+							<option value="Stationery Products">Stationery Products</option>
+						</select>	
+					  </label>
+					</div>
+					<!--field6: ProductDescription id="productDesc" -->
+					<div class="form-group">
+					  <label for="pwd">Product-Description
+					  <textarea class="form-control" name="pDesc" rows="5" required></textarea>
+					  </label>
+					</div>
+					<!--Button: Add Product  -->
+					<button type="submit" class="btn btn-default" >Add Product</button>
+					</br></br>
+				</form>
+		</center>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+<title>Buyer Registration</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+.buyer_reg
+{
+	border:1px;
+	float:center;
+	width:35%;
+	padding:20px;
+	background:rgba(0,0,0,0.35);
+}
+label,h2
+{
+color:white;
+}
+body
+{
+	height:100%;
+	padding:0;
+	margin:0;
+	background-image:url("https://cdn.techinasia.com/wp-content/uploads/2015/07/online-shopping-ecommerce-ss-1920.png");
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	
+}
+.form-radio{
+	display:none;
+}
+</style>
+<body>
+<header>
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+	<div class="navbar-header">
+		<img src ="/images/logo.png" style="width:90px;height:50px;">
+	</div>
+<div >
+	<ul class="nav navbar-nav">
+	<li class="active"><a href="/index">Home</a></li>
+	<li><a href="#">About Us</a></li>
+	<li><a href="#">Contact</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+	<li><a href="/login/signin">Login</a></li>
+	<li><a href="/index/mainreg">Register</a></li>
+	</ul>
+</div>
+	
+</nav>
+</header>
+{{#if error_msg}}
+        <div class="alert alert-danger">{{msg}}</div>
+{{/if}}
+<center>
+<div class="container">
+<div class="buyer_reg">
+
+<form align="center" action="/importer/insert" method="post">
+	<div class="form-radio" >
+		<input type="radio" name="category" value="importer" checked="true"/>Importer
+	</div>
+
+	<h2>Registration Form</h2>
+		<div class="form-group">
+			<label>First Name:<input type="text"  class="form-control" placeholder="Enter your first name" name="fname" required/></label>
+		</div>
+		<div class="form-group">
+			<label>Last Name:<input type="text"  class="form-control" placeholder="Enter your last name" name="lname" required/></label>
+		</div>
+		<div class="form-group">
+			<label>EmailId:<input type="text"  class="form-control" placeholder="Enter your emailId" name="eID" required/></label>
+		</div>
+		<div class="form-group">
+			<label>Password:<input type="password"  class="form-control" placeholder="Enter your password" name="pwd" required/></label>
+		</div>
+		<div class="form-group">
+			<label>Retype Password:<input type="password"  class="form-control" placeholder="Enter your password again" name="rptpwd" required/></label>
+		</div>
+		
+			<button type="submit" class="btn btn-default reg-seller ">Register</button>
+</form>
+</div>
+</div>
+</center>		
+</body>
+</html>

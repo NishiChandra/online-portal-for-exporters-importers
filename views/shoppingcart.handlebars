@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Products</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<header>
+<nav class="navbar navbar-inverse fixed-top">
+  <div class="container-fluid">
+  
+  <div class="navbar-header">
+    <img src ="/images/logo.png" style="width:90px;height:50px;">
+  </div>
+<div >
+  <ul class="nav navbar-nav">
+  <li class="active"><a href="/importer/imphome">Home</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+  <li><a href="#"><span class="glyphicon glyphicon-shopping-cart">Cart</span><span class="badge">{{session.cart.totalQty}}</span></a></li>
+  <li><a href="/index"><span class="glyphicon glyphicon-user"></span>LogOut</a></li>
+  </ul>
+</div>
+  
+</nav>
+</header>
+<center><h2>Cart</h2></center>
+{{# if products}}
+<div class="row">
+    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+      <ul class="list-group">
+      {{# each products}}
+      <li class="list-group-item">
+        <span class="badge">{{this.qty}}</span>
+        <strong>{{this.item.productName}}</strong>
+        <strong>{{this.item.expID}}</strong>
+        <span class="label label-success">Rs.{{this.price}}</span>
+        <!--
+        <div class="btn-group">
+            <button class="btn btn-primary btn-xs dropdown-toggle" type="button">Action<span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                  <li><a href="#" >Reduce</a></li>
+                  <li><a href="#">Remove All</a></li>
+              </ul>
+        </div>
+      -->
+      </li>
+      {{/each}}
+    </ul>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+      <strong>Total:{{totalPrice}}</strong>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+     <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+      <a href="/importer/checkout" type="button" class="btn btn-success">Checkout</a>
+    </div>
+  </div>
+  {{else}}
+{{/if}}
